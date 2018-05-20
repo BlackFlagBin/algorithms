@@ -53,7 +53,7 @@ public class MergeSort implements Sort {
     private void insertionSort(int[] array, int left, int right) {
         for (int i = left + 1; i <= right; i++) {
             int element = array[i];
-            int j = i;
+            int j;
             for (j = i; j > 0 && element < array[j - 1]; j--) {
                 array[j - 1] = element;
             }

@@ -69,7 +69,7 @@ public class SortUtil {
         assert isSorted(sortedArray);
         long consumeTime = (endTime - startTime);
 
-        System.out.println(sortAlgorithm.getClass().getSimpleName() + " : " + consumeTime);
+        System.out.println(sortAlgorithm.getClass().getSimpleName() + " : " + consumeTime+" ms");
 
     }
 }
