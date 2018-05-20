@@ -12,7 +12,7 @@ public class MergeSort implements Sort {
     }
 
     private void mergeSort(int[] array, int left, int right) {
-        if ((right - left) < 15) {
+        if (right - left < 15) {
             insertionSort(array, left, right);
             return;
         }
@@ -54,8 +54,8 @@ public class MergeSort implements Sort {
         for (int i = left + 1; i <= right; i++) {
             int element = array[i];
             int j;
-            for (j = i; j > 0 && element < array[j - 1]; j--) {
-                array[j - 1] = element;
+            for (j = i; j > left && element < array[j - 1]; j--) {
+                array[j] = array[j - 1];
             }
             array[j] = element;
         }

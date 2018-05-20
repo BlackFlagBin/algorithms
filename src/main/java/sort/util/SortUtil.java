@@ -17,16 +17,16 @@ public class SortUtil {
         return randomArray;
     }
 
-    public static int[] generateNearlySortedArray(int n,  int swapTimes) {
+    public static int[] generateNearlySortedArray(int n, int swapTimes) {
         int[] array = new int[n];
         for (int i = 0; i < n; i++) {
-            array[i]=i;
+            array[i] = i;
         }
         Random random = new Random();
         for (int i = 0; i < swapTimes; i++) {
             int randomFirstIndex = random.nextInt(n);
             int randomSecondIndex = random.nextInt(n);
-            swap(array,randomFirstIndex,randomSecondIndex);
+            swap(array, randomFirstIndex, randomSecondIndex);
         }
         return array;
     }
@@ -44,7 +44,7 @@ public class SortUtil {
         array[secondPosition] = temp;
     }
 
-    public static boolean isSorted(int[] array) {
+    private static boolean isSorted(int[] array) {
         for (int i = 0; i < array.length - 1; i++) {
             if (array[i] > array[i + 1]) {
                 return false;
@@ -67,9 +67,10 @@ public class SortUtil {
         long endTime = System.currentTimeMillis();
 
         assert isSorted(sortedArray);
+
         long consumeTime = (endTime - startTime);
 
-        System.out.println(sortAlgorithm.getClass().getSimpleName() + " : " + consumeTime+" ms");
+        System.out.println(sortAlgorithm.getClass().getSimpleName() + " : " + consumeTime + " ms");
 
     }
 }

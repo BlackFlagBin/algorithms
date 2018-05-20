@@ -32,10 +32,12 @@ public class QuickSort implements Sort {
         int randomPosition = new Random().nextInt(right - left + 1) + left;
         SortUtil.swap(array, left, randomPosition);
 
-        //array[left+1,finalPosition]<array[left] ; array[finalPosition+1,i)>=array[left]
+        int element = array[left];
+
+        //array[left+1,finalPosition]<element ; array[finalPosition+1,i)>=element
         int finalPosition = left;
         for (int i = left + 1; i <= right; i++) {
-            if (array[i] < array[left]) {
+            if (array[i] < element) {
                 SortUtil.swap(array, ++finalPosition, i);
             }
         }
@@ -44,10 +46,10 @@ public class QuickSort implements Sort {
     }
 
     private void insertionSort(int[] array, int left, int right) {
-        for (int i = left + 1; i < right - left + 1; i++) {
+        for (int i = left + 1; i <= right; i++) {
             int element = array[i];
             int j;
-            for (j = i; j > 0 && element < array[j - 1]; j--) {
+            for (j = i; j > left && element < array[j - 1]; j--) {
                 array[j] = array[j - 1];
             }
             array[j] = element;
