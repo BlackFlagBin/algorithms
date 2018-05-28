@@ -89,7 +89,6 @@ public class MaxHeap {
         // 确保arr数组是从大到小排列的
         for (int i = 1; i < N; i++)
             assert arr[i - 1] >= arr[i];
-
     }
 
 }
